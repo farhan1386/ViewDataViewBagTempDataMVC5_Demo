@@ -1,0 +1,33 @@
+﻿@using ViewDataViewBagTempDataMVC5_Demo.Models
+
+@{
+    ViewBag.Title = "Temp Data";
+}
+
+<h2>TempData Example</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+            <th>Start Date</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in TempData["Employees"] as List<Employee>)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Position</td>
+                <td>@item.Office</td>
+                <td>@item.Age</td>
+                <td>@item.StartDate.ToString("dd-MMM-yyyy")</td>
+                <td>@item.Salary</td>
+            </tr>
+        }
+    </tbody>
+</table>
